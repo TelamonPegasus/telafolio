@@ -1,0 +1,437 @@
+/* <-----==========default-section==========-----> */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Prata&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+:root{
+    --main-bg: hsl(240, 5%, 4%);
+    --gray-bg: hsl(228, 10%, 20%);
+    --heading-text: hsl(0, 0%, 100%);
+    --primary-text: hsl(240, 0%, 65%);
+    --contact-link: hsl(53, 96%, 65%);
+}
+html,body{
+    position: relative;
+    overflow-x: hidden;
+}
+h1,h2{
+    color: var(--heading-text);
+    font-weight: 400;
+    font-family: 'Prata', serif;
+}
+p{
+    line-height: 1.5;
+}
+body{
+    min-height: 100vh;
+    color: var(--primary-text);
+    background: var(--main-bg);
+    font-size: .99rem;
+    font-family: 'Inter', sans-serif;
+}
+
+/* <-----==========nav-section==========-----> */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 1rem 2rem 1rem;
+    position: relative;
+    animation: fadeInTop .5s linear;
+}
+@keyframes fadeInTop{
+    0%{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.logo{
+    color: var(--heading-text);
+    text-decoration: none;
+    font-family: 'Prata',serif;
+}
+nav .nav-links{
+    position: absolute;
+    top: 6rem;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 3rem);
+    background: white;
+    padding: 1.5rem 1.5rem;
+    border-radius: .3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    list-style-type: none;
+    transform: translateX(180%);
+    transition: all .5s linear;
+}
+nav.active .nav-links{
+    transform: translateX(0);
+}
+.nav-links li a{
+    color: var(--main-bg);
+    text-decoration: none;
+    transition: all .2s linear;
+    position: relative;
+}
+.nav-links li a::after,.project a::after{
+    position: absolute;
+    content: '';
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--heading-text);
+    transition: all .2s linear;
+    z-index: -1;
+}
+.nav-links li a:hover{
+    color: var(--heading-text);
+}
+.nav-links li a:hover::after{
+    width: 100%;
+    left: 0;
+}
+nav .contact-link{
+    display: none;
+}
+
+/* <-----==========hamburgr-section==========-----> */
+
+nav .menu{
+    width: 24px;
+    height: 11.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.menu .hamburger{
+    width: 1.5rem;
+    height: 3.5px;
+    border-radius: 1rem;
+    background: white;
+    transition: all 1.5s linear;
+}
+.menu .hamburger::after,.menu .hamburger::before{
+    position: absolute;
+    content: '';
+    width: 1.5rem;
+    height: 3.5px;
+    border-radius: 1rem;
+    background: white;
+    transition: all .5s linear;
+}
+.menu .hamburger::after{
+    transform: translateY(-.5rem);
+}
+.menu .hamburger::before{
+    transform: translateY(.5rem);
+}
+.menu.open .hamburger{
+    transform: translateX(-30px);
+    background: transparent;
+}
+.menu.open .hamburger::after{
+    transform: rotate(45deg) translate(1.35rem, -1.35rem);
+}
+.menu.open .hamburger::before{
+    transform: rotate(-45deg) translate(1.35rem, 1.35rem);
+}
+
+/* <-----==========main-section==========-----> */
+
+/* <---intro---> */
+
+main .intro{
+    padding: 3rem 1rem;
+    animation: slowFadeTop 1.5s linear;
+}
+@keyframes slowFadeTop{
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.intro h1{
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+
+/* <---companies---> */
+
+main .companies{
+    padding: 2rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.companies>*{
+    min-width: 120px;
+    max-height: 30px;
+    animation: fade 2.5s linear;
+    cursor: text;
+}
+@keyframes fade{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* <---projects---> */
+
+main .projects{
+    padding: 3rem 1rem;
+    display: grid;
+    gap: 3rem;
+}
+.projects .project .img-container{
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.project img{
+    width: 100%;
+    transition: all .5s linear;
+}
+.project:hover> .img-container img{
+    transform: scale(1.2);
+}
+.project a{
+    color: var(--heading-text);
+    font-size: 2rem;
+    font-family: 'Prata',serif;
+    text-decoration: none;
+    margin: .5rem 0;
+    display: block;
+    width: max-content;
+    position: relative;
+}
+.project a:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+/* <---article---> */
+
+main .article{
+    background: var(--gray-bg);
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.article>*{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.article h2{
+    font-size: 2rem;
+}
+
+/* <---contact---> */
+
+main .contact{
+    padding: 3rem 1rem;
+}
+.contact h2{
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+.contact-link{
+    color: var(--main-bg);
+    background: var(--contact-link);
+    font-size: .9rem;
+    font-family: 'Prata',serif;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    display: block;
+    width: max-content;
+    overflow: hidden;
+    transition: all .5s linear;
+    position: relative;
+    z-index: 0;
+}
+.contact-link::before{
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 100%;
+    transition: all .3s linear;
+    z-index: -1;
+}
+.contact-link:hover{
+    color: var(--heading-text);
+}
+.contact-link:hover:before{
+    right: 0;
+    background: var(--gray-bg);
+}
+
+/* <-----==========footer-section==========-----> */
+
+footer{
+    background: var(--gray-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+}
+footer .media-links{
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: -.1rem;
+}
+.media-links li a img{
+    position: relative;
+    z-index: 0;
+    transition: all .5s linear;
+}
+.media-links li a img:hover{
+    transform: rotateY(360deg) scale(1.2);
+}
+
+/* <-----==========media-queries==========-----> */
+
+@media(min-width:650px){ /*<---tablet--->*/
+    body{
+        font-size: 1.125rem;
+    }
+    nav{
+        padding: 3rem 3rem 0 3rem;
+    }
+    nav .nav-links{
+        top: 8rem;
+        max-width: 425px;
+    }
+    main .intro,main .companies,main .projects,main .article,main .contact{
+        padding: 5rem 2.5rem;
+    }
+    .intro h1{
+        font-size: 3.5rem;
+    }
+    .companies>*{
+        min-width: 200px;
+    }
+    .article h2,.contact h2{
+        font-size: 2.25rem;
+    }
+    .contact p{
+        max-width: 520px;
+    }
+}
+
+@media(min-width: 1000px){ /*<---desktop--->*/
+    nav{
+        padding: 4rem 5rem 0 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    nav .logo{
+        font-size: 1.25rem;
+    }
+    nav .nav-links{
+        position: initial;
+        margin-left: unset;
+        margin-right: unset;
+        width: max-content;
+        background: transparent;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 2.5rem;
+        transform: translateX(0);
+    }
+    .nav-links li a{
+        color: var(--primary-text);
+    }
+    nav .menu{
+        display: none;
+    }
+    main .intro,main .companies,main .projects,main .article,main .contact{
+        padding: 5rem;
+    }
+    main .intro{
+        max-width: 950px;
+    }
+    .intro h1{
+        font-size: 3.6rem;
+    }
+    main .companies{
+        justify-content: space-between;
+        flex-wrap: unset;
+    }
+    .companies>*{
+        min-width: auto;
+    }
+    main .projects{
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
+    main .article{
+        flex-direction: row;
+        gap: 5rem;
+    }
+    .article h2,.contact h2{
+        font-size: 2.4rem;
+    }
+    .contact-link{
+        font-size: 19px;
+        padding: 1rem 3rem;
+    }
+    footer{
+        padding: 2rem 5rem;
+    }
+}
+@media(min-width:1200px){
+    body{
+        font-size: 1.188rem;
+    }
+    nav{
+        padding: 4rem 8rem 0 8rem;
+    }
+    nav .contact-link{
+        display: unset;
+        margin-top: 0;
+    }
+    main .intro,main .companies,main .projects,main .article,main .contact{
+        padding: 5rem 8rem;
+    }
+    footer{
+        padding: 2.5rem 8rem;
+    }
+}
