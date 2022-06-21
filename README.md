@@ -1,7 +1,7 @@
 
 # Codewell - Web Developer Portfolio
 
-![Design preview for web developer portfolio](.Design\Landing Page - Desktop View.png)
+![Design preview for web developer portfolio](./Design/Landing%20Page%20-%20Desktop%20View.png)
 
 ## Welcome! 👋
 
