@@ -26,8 +26,7 @@ Here is the solution site url-
 
 ## Author
 
-Facebook -[Biplob Barua Rocky] <https://www.facebook.com/ANT1D0t35>
-
+Name - Komano Hiroshi & Rocky Barua
 Frontend Mentor - <https://www.frontendmentor.io/profile/Drougnov>
 
 ### Any suggestion
